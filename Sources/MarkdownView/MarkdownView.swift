@@ -99,9 +99,9 @@ extension MarkdownView {
     }
   }
 
-  public func evaluate(script: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
+  public func evaluate(_ script: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
     guard let webView = webView else { return }
-    webView.evaluateJavaScript(script,completionHandler)
+    webView.evaluateJavaScript(script,completionHandler: completionHandler)
   }
 }
 
