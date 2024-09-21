@@ -53,7 +53,7 @@ open class MarkdownView: UIView {
     let updateHeightHandler = UpdateHeightHandler { [weak self] height in
       guard height > self?.intrinsicContentHeight ?? 0 else { return }
       self?.onRendered?(height)
-      self?.intrinsicContentHeight = self.isScrollEnabled ? 0 : height
+      self?.intrinsicContentHeight = self?.isScrollEnabled == false ? 0 : height
     }
     self.updateHeightHandler = updateHeightHandler
   }
