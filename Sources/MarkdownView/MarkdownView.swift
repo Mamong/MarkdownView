@@ -98,6 +98,11 @@ extension MarkdownView {
       print("[MarkdownView][Error] \(error)")
     }
   }
+
+  public func evaluate(script: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
+    guard let webView = webView else { return }
+    webView.evaluateJavaScript(script,completionHandler)
+  }
 }
 
 // MARK: - WKNavigationDelegate
