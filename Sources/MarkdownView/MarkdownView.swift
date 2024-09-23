@@ -88,7 +88,7 @@ extension MarkdownView {
     self.webView?.load(URLRequest(url: styled ? Self.styledHtmlUrl : Self.nonStyledHtmlUrl))
   }
 
- public func show(markdown: String, completionHandler: (Error? -> Void)? = nil) {
+ public func show(markdown: String, completionHandler: ((Error?) -> Void)? = nil) {
     guard let webView = webView else { return }
 
     let escapedMarkdown = self.escape(markdown: markdown) ?? ""
